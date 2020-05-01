@@ -21,11 +21,11 @@ class covidBot(commands.Cog):
 
     @commands.command(name='stats')
     async def stats(self, ctx):
-        await ctx.send(f'Заражено в России: {count_in_russia}\nЗаражено в мире: {count_in_world}')
+        await ctx.send(f'Заражено в 🇷🇺 России: {count_in_russia}\nЗаражено в 🗺️ мире: {count_in_world} чел.👥')
 
     @commands.command(name='change_region')
     async def change_region(self, ctx, region_name):
-        await ctx.send(f'В {region_name} заражено {count_in_region} чел.')
+        await ctx.send(f'В {region_name} заражено {count_in_region} чел.👥')
 
 
 bot = commands.Bot(command_prefix='!')
