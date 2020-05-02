@@ -50,3 +50,18 @@ class Parser:
                 self.world_dic[country][0] = self.world_dic[country][0][:self.world_dic[country][0].find('+')]
             else:
                 pass
+
+    def region_all(self, region):
+        return self.russian_dic[region][0]
+
+    def region_new(self, region):
+        return self.russian_dic[region][1]
+
+    def region_sick(self, region):
+        return self.russian_dic[region][2]
+
+    def region_healthy(self, region):
+        return self.russian_dic[region][3]
+
+    def region_dead(self, region):
+        return self.russian_dic[region][4]
