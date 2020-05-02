@@ -65,3 +65,18 @@ class Parser:
 
     def region_dead(self, region):
         return self.russian_dic[region][4]
+
+    def world_all(self, country):
+        return self.world_dic[country][0]
+
+    def world_new(self, country):
+        return self.world_dic[country][1]
+
+    def world_sick(self, country):
+        return self.world_dic[country][2]
+
+    def world_healthy(self, country):
+        return self.world_dic[country][3]
+
+    def world_dead(self, country):
+        return self.world_dic[country][4]
