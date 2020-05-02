@@ -5,7 +5,9 @@ import requests as req
 class Parser:
     def __init__(self):
         self.russian_dic = {}
+        self.regions = []
         self.world_dic = {}
+        self.countries = []
         self.url = "https://coronavirusstat.ru"
         self.headers = {'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:74.0) Gecko/20100101 Firefox/74.0',
                         'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'}
@@ -32,6 +34,8 @@ class Parser:
                 self.russian_dic[city][0] = self.russian_dic[city][0][:self.russian_dic[city][0].find('+')]
             else:
                 pass
+        for key in self.russian_dic:
+            self.regions.append(key)
 
     def get_world(self):
         items = self.soup.find_all("div", class_='row border border-bottom-0 c_search2_row')
@@ -50,6 +54,8 @@ class Parser:
                 self.world_dic[country][0] = self.world_dic[country][0][:self.world_dic[country][0].find('+')]
             else:
                 pass
+        for key in self.world_dic:
+            self.countries.append(key)
 
     def region_all(self, region):
         return self.russian_dic[region][0]
