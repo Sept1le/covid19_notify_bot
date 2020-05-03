@@ -94,12 +94,13 @@ class Parser:
         return self.world_dic[country][4]
 
     def world_list(self):
+        self.get_world()
         for key in self.world_dic:
             self.countries.append(key)
         return self.countries
 
     def region_list(self):
+        self.get_russian_regions()
         for key in self.russian_dic:
             self.regions.append(key)
         return self.regions
-    
