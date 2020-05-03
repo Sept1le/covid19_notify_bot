@@ -34,8 +34,6 @@ class Parser:
                 self.russian_dic[city][0] = self.russian_dic[city][0][:self.russian_dic[city][0].find('+')]
             else:
                 pass
-        for key in self.russian_dic:
-            self.regions.append(key)
 
     def get_world(self):
         items = self.soup.find_all("div", class_='row border border-bottom-0 c_search2_row')
@@ -54,8 +52,6 @@ class Parser:
                 self.world_dic[country][0] = self.world_dic[country][0][:self.world_dic[country][0].find('+')]
             else:
                 pass
-        for key in self.world_dic:
-            self.countries.append(key)
 
     def region_all(self, region):
         self.get_russian_regions()
@@ -98,9 +94,14 @@ class Parser:
         return self.world_dic[country][4]
 
     def world_list(self):
-        self.get_world()
+        for key in self.world_dic:
+            self.countries.append(key)
         return self.countries
 
     def region_list(self):
-        self.get_russian_regions()
+        for key in self.russian_dic:
+            self.regions.append(key)
         return self.regions
+
+
+a = Parser()
