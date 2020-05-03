@@ -96,3 +96,11 @@ class Parser:
     def world_dead(self, country):
         self.get_world()
         return self.world_dic[country][4]
+
+    def world_list(self):
+        self.get_world()
+        return self.countries
+
+    def region_list(self):
+        self.get_russian_regions()
+        return self.regions
