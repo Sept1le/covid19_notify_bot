@@ -1,4 +1,4 @@
-TOKEN = 'NzA1NzQzOTcyNjIyMTM5NDIy.Xq06CQ.f9mN2OwB6iOgCRDP1Yt4QQMjGwg'
+TOKEN = ''
 message_about_covid = ''' 
 ⚫️⚫️⚫️
 🦠🦠Коронавирус – заболевание, влияющее на дыхательную систему человека.
