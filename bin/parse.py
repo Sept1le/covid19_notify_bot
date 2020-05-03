@@ -58,31 +58,41 @@ class Parser:
             self.countries.append(key)
 
     def region_all(self, region):
+        self.get_russian_regions()
         return self.russian_dic[region][0]
 
     def region_new(self, region):
+        self.get_russian_regions()
         return self.russian_dic[region][1]
 
     def region_sick(self, region):
+        self.get_russian_regions()
         return self.russian_dic[region][2]
 
     def region_healthy(self, region):
+        self.get_russian_regions()
         return self.russian_dic[region][3]
 
     def region_dead(self, region):
+        self.get_russian_regions()
         return self.russian_dic[region][4]
 
     def world_all(self, country):
+        self.get_world()
         return self.world_dic[country][0]
 
     def world_new(self, country):
+        self.get_world()
         return self.world_dic[country][1]
 
     def world_sick(self, country):
+        self.get_world()
         return self.world_dic[country][2]
 
     def world_healthy(self, country):
+        self.get_world()
         return self.world_dic[country][3]
 
     def world_dead(self, country):
+        self.get_world()
         return self.world_dic[country][4]
