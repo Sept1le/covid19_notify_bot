@@ -102,6 +102,4 @@ class Parser:
         for key in self.russian_dic:
             self.regions.append(key)
         return self.regions
-
-
-a = Parser()
+    
