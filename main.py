@@ -25,8 +25,10 @@ class covidBot(commands.Cog):
 
     @commands.command(name='stats', brief='Показывает общую статистику')
     async def stats(self, ctx):
-        await ctx.send(f'Росиия 🇷🇺 ↗ Всего случаев: {self.p.rus_stats()[0]} ⌚Сегодня: {self.p.rus_stats()[1]} 🦠Болеет: {self.p.rus_stats()[2]} 💊Выздоровело: {self.p.rus_stats()[3]} 💀Умерло: {self.p.rus_stats()[4]}\n')
-        await ctx.send(f'Мир🗺️ ↗ Всего случаев: {self.p.world_stats()[0]} ⌚Сегодня: {self.p.world_stats()[1]} 🦠Болеет: {self.p.world_stats()[2]} 💊Выздоровело: {self.p.world_stats()[3]} 💀Умерло: {self.p.world_stats()[4]}\n')
+        r = self.p.rus_stats()
+        w = self.p.world_stats()
+        await ctx.send(f'Росиия 🇷🇺 ↗ Всего случаев: {r[0]} ⌚Сегодня: {r[1]} 🦠Болеет: {r[2]} 💊Выздоровело: {r[3]} 💀Умерло: {r[4]}\n')
+        await ctx.send(f'Мир🗺️ ↗ Всего случаев: {w[0]} ⌚Сегодня: {w[1]} 🦠Болеет: {w[2]} 💊Выздоровело: {w[3]} 💀Умерло: {w[4]}\n')
 
     @commands.command(name='region_stats', brief='"название области" "обл." - информация о регионе')
     async def change_region(self, ctx, region_first_name, region_second_name):
