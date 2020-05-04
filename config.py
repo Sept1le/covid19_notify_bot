@@ -32,17 +32,6 @@ message_about_covid = '''
 ⚫️⚫️⚫️
 '''
 
-def GenerateTable(list_of_countries):
-  x = "```Страна".ljust(25, ' ')+' |     Всего     |     Сегодня       |     Болеет  | Выздоровело|\n'
-  x = x+'-'*len(x.split('\n')[0])+'\n'
-  for i in list_of_countries:
-    x = x+i.ljust(25, ' ')+' | '+'all[i]'+' | '+'today[i]'+' | '+'unhealthy[i]'+' | '+'healthy[i]'+' | '+'recovered[i]'+'|\n'
-    x = x+'-'*len(x.split('\n')[0])+'\n'
-  x += '```'
-  return x
-
-# print(GenerateTable(['США', 'Россия', 'test', 'test', 'test']))
-
 def region_statsg(list_of_regions, all_b, today, unhealthy, healthy, dead):
   for i in list_of_regions:
     return f'{i} Всего: {all_b[i]} Сегодня: {today[i]} Болеет: {unhealthy[i]} Выздоровело: {healthy[i]} Умерло: {dead[i]}'

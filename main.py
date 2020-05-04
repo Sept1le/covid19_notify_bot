@@ -10,9 +10,6 @@ from parse import Parser
 import pymorphy2
 import progressbar
 
-count_in_russia = 'test'
-count_in_world = 'test'
-# count_in_region = 2
 
 class covidBot(commands.Cog):
     morph = pymorphy2.MorphAnalyzer()
@@ -28,7 +25,8 @@ class covidBot(commands.Cog):
 
     @commands.command(name='stats', brief='Показывает общую статистику')
     async def stats(self, ctx):
-        await ctx.send(f'Заражено в 🇷🇺 России: {None} чел.👥\nЗаражено в 🗺️ мире: {None} чел.👥')
+        await ctx.send(f'Росиия 🇷🇺 ↗ Всего случаев: {self.p.rus_stats()[0]} ⌚Сегодня: {self.p.rus_stats()[1]} 🦠Болеет: {self.p.rus_stats()[2]} 💊Выздоровело: {self.p.rus_stats()[3]} 💀Умерло: {self.p.rus_stats()[4]}\n')
+        await ctx.send(f'Мир🗺️ ↗ Всего случаев: {self.p.world_stats()[0]} ⌚Сегодня: {self.p.world_stats()[1]} 🦠Болеет: {self.p.world_stats()[2]} 💊Выздоровело: {self.p.world_stats()[3]} 💀Умерло: {self.p.world_stats()[4]}\n')
 
     @commands.command(name='region_stats', brief='"название области" "обл." - информация о регионе')
     async def change_region(self, ctx, region_first_name, region_second_name):
@@ -44,7 +42,7 @@ class covidBot(commands.Cog):
 
         for i in progressbar.progressbar(regions):
             msg.append(f'({i}) ↗ Всего случаев: {self.p.region_all(i)} ⌚Сегодня: {self.p.region_new(i)} 🦠Болеет: {self.p.region_sick(i)} 💊Выздоровело: {self.p.region_healthy(i)} 💀Умерло: {self.p.region_dead(i)}\n')
-            msg.append('')
+            msg.append('-')
 
         for i in msg:
             await ctx.send(i)
